@@ -23,7 +23,7 @@ FanModule::FanModule(FanConfigClass* config, int displayAddr, int displaySda, in
 char* FanModule::_customData() {
 //  Serial.println("FanModule::_customData");
   char* data = (char *)malloc(100);
-  sprintf(data, "{\"speed\":\"%d\", \"osc\":\"%s\"}", _speed, _osc ? "on": "off");
+  sprintf(data, "{\"speed\":%d, \"osc\":\"%s\"}", _speed, _osc ? "on": "off");
   return data;  
 }
 
@@ -68,7 +68,7 @@ void FanModule::setSpeed(int speed) {
       digitalWrite(_speed2Pin, HIGH);
       break;
     case 3:
-      digitalWrite(_speed2Pin, HIGH);
+      digitalWrite(_speed3Pin, HIGH);
       break;
       
   }
