@@ -16,13 +16,13 @@
 FanConfigClass *config;
 XIOTModule* module;
 
-int sdl = 12;
+int scl = 12;
 int sda = 14;
 
 int speed1Pin = 4;
 int speed2Pin = 5;
-int speed3Pin = 15;
-int oscPin = 16;
+int speed3Pin = 0;
+int oscPin = 2;
 
 
 void setup(){
@@ -32,7 +32,7 @@ void setup(){
   config = new FanConfigClass((unsigned int)CONFIG_VERSION, (char*)MODULE_NAME);
   config->init();
  
-  module = new FanModule(config, 0x3C, sda, sdl, speed1Pin, speed2Pin, speed3Pin, oscPin);
+  module = new FanModule(config, 0x3C, sda, scl, speed1Pin, speed2Pin, speed3Pin, oscPin);
      
 }
 
