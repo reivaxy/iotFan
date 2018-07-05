@@ -37,7 +37,7 @@ Here is the working device, not yet properly attached and not yet with a window 
 
 <img src="https://raw.githubusercontent.com/reivaxy/iotFan/master/resources/working.jpg" width="500"/>
 
-And here is the module control panel in the webApp:
+And here is the module control panel in the webApp (below it you can see the control panel for the switch module, available here https://github.com/reivaxy/iotSwitch and described there https://github.com/reivaxy/iotinator/wiki/12.-Building-the-iotSwitch-agent-module) 
 
 <img src="https://raw.githubusercontent.com/reivaxy/iotFan/master/resources/app.png" width="200"/>
 
