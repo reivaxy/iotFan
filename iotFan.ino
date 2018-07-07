@@ -21,8 +21,8 @@ int sda = 14;
 
 int speed1Pin = 4;
 int speed2Pin = 5;
-int speed3Pin = 0;
-int oscPin = 2;
+int speed3Pin = 15;
+int oscPin = 16;
 
 
 void setup(){
