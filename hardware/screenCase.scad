@@ -2,8 +2,8 @@
 include <../../iotinator/hardware/oledPanel.scad>;
 
 
-x = 45;
-y = 45;
+x = 33;
+y = 40;
 z = 5;
 
 topOffset = 0;
@@ -23,8 +23,11 @@ module screenCase() {
     }
   }
   windowPanel(x, y, 1.5, topOffset);
-  screwBase(1,1, 7);
-  screwBase(x - 8, y - 8, 7);
+  side = 5;
+  screwBase(0, 0, side);
+  screwBase(x - side, 0, side);
+  screwBase(0, y - side, side);
+  screwBase(x - side, y - side, side);
 }
 
 module screwBase(x, y, side) {
