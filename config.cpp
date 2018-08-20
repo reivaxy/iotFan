@@ -17,7 +17,7 @@ FanConfigClass::FanConfigClass(unsigned int version, const char* name):ModuleCon
  */
 void FanConfigClass::initFromDefault() {
   ModuleConfigClass::initFromDefault(); // handles version and name init, ssid and pwd
-
+  setBrightness(60);
 }
 
 const char* FanConfigClass::getDefaultUIClassName() {

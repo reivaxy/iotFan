@@ -6,7 +6,9 @@
  
 #include "FanModule.h"
  
-FanModule::FanModule(FanConfigClass* config, int displayAddr, int displaySda, int displayScl, int speed1Pin, int speed2Pin, int speed3Pin, int oscPin):XIOTModule(config, displayAddr, displaySda, displayScl) {
+FanModule::FanModule(FanConfigClass* config, int displayAddr, int displaySda, int displayScl,
+                      int speed1Pin, int speed2Pin, int speed3Pin, int oscPin, bool flipScreen,
+                       uint8_t brightness):XIOTModule(config, displayAddr, displaySda, displayScl, flipScreen, brightness) {
   _speed1Pin = speed1Pin;
   _speed2Pin = speed2Pin;
   _speed3Pin = speed3Pin;

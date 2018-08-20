@@ -32,7 +32,7 @@ void setup(){
   config = new FanConfigClass((unsigned int)CONFIG_VERSION, (char*)MODULE_NAME);
   config->init();
  
-  module = new FanModule(config, 0x3C, sda, scl, speed1Pin, speed2Pin, speed3Pin, oscPin);
+  module = new FanModule(config, 0x3C, sda, scl, speed1Pin, speed2Pin, speed3Pin, oscPin, config->getFlipScreen(), config->getBrightness());
      
 }
 

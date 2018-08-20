@@ -10,7 +10,8 @@
  
 class FanModule:public XIOTModule {
 public:
-  FanModule(FanConfigClass* config, int displayAddr, int displaySda, int displayScl, int speed1Pin, int speed2Pin, int speed3Pin, int oscPin);
+  FanModule(FanConfigClass* config, int displayAddr, int displaySda, int displayScl, 
+            int speed1Pin, int speed2Pin, int speed3Pin, int oscPin, bool flipScreen, uint8_t brightness);
   
 protected:
   int _speed = 0;
