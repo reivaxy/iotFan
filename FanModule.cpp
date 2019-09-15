@@ -25,7 +25,7 @@ FanModule::FanModule(FanConfigClass* config, int displayAddr, int displaySda, in
 char* FanModule::_customData() {
 //  Serial.println("FanModule::_customData");
   char* data = (char *)malloc(100);
-  sprintf(data, "{\"speed\":%d, \"osc\":\"%s\"}", _speed, _osc ? "on": "off");
+  sprintf(data, "{\"speed\":%d, \"osc\":\"%s\", \"status\":\"%d/%s\"}", _speed, _osc ? "on": "off", _speed, _osc ? "on": "off");
   return data;  
 }
 
