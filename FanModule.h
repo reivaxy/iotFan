@@ -18,6 +18,7 @@ protected:
   bool _osc = false;
     
   char* _customData() override;
+  char* _globalStatus() override;
   char* useData(char *, int *) override;
   void setOsc(bool);
   void setSpeed(int);
