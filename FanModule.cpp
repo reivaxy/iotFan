@@ -35,6 +35,29 @@ char* FanModule::_globalStatus() {
   return strdup(message);  
 }
 
+
+// Process SMS message, syntax can be
+// 3
+// on
+// 2/on
+bool FanModule::customProcessSMS(const char* phoneNumber, const bool isAdmin, const char* message) {
+  if(strcmp(message, "on") == 0) {
+    setOsc(true);
+  }
+  if(strcmp(message, "off") == 0) {
+    setOsc(false);
+  }
+  // If first char is between 0 and 3
+  if(*message >= 48 && *message <= 51) {
+    setSpeed((int) (*message - 48));
+  }
+  char* slash = strchr(message, '/');
+  if(slash != NULL) {
+    customProcessSMS(phoneNumber, isAdmin, slash+1);
+  }
+  return true;
+}
+
 char* FanModule::useData(char* data, int* httpCode) {
 Serial.println("fan");
 Serial.println(data);
@@ -54,7 +77,7 @@ Serial.println(data);
     setSpeed(speed);
   }
   *httpCode = 200;
-  return emptyMallocedResponse();
+  return NULL;  // default response will be the same payload as the registering one => insures updating agent in master agentCollection
 }
 
 void FanModule::setOsc(bool osc) {
